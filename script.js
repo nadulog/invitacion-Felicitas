@@ -55,7 +55,7 @@ window.setInterval(updateCountdown, 1000);
 document.querySelector("#calendarButton").addEventListener("click", downloadCalendarEvent);
 
 const mapModal = document.querySelector("#mapModal");
-const giftsModal = document.querySelector("#giftsModal");
+const paymentModal = document.querySelector("#paymentModal");
 
 function openModal(modal) {
   modal.showModal();
@@ -99,8 +99,7 @@ async function copyText(button) {
 }
 
 document.querySelector("#openMapModal").addEventListener("click", () => openModal(mapModal));
-// La versión de amigos no tiene datos de regalo, por eso el botón puede no estar.
-document.querySelector("#openGiftsModal")?.addEventListener("click", () => openModal(giftsModal));
+document.querySelector("#openPaymentModal").addEventListener("click", () => openModal(paymentModal));
 
 document.querySelectorAll("[data-close-modal]").forEach((button) => {
   button.addEventListener("click", () => closeModal(button.closest("dialog")));
@@ -110,7 +109,7 @@ document.querySelectorAll("[data-copy]").forEach((button) => {
   button.addEventListener("click", () => copyText(button));
 });
 
-[mapModal, giftsModal].filter(Boolean).forEach((modal) => {
+[mapModal, paymentModal].forEach((modal) => {
   modal.addEventListener("close", syncModalState);
   modal.addEventListener("click", (event) => {
     if (event.target === modal) closeModal(modal);

@@ -294,7 +294,7 @@ a {
   pointer-events: none;
 }
 
-/* Modales de ubicación y regalos, en manteca y negro como las piezas. */
+/* Modales de ubicación y pago, en manteca y negro como las piezas. */
 .info-modal {
   width: min(90vw, 420px);
   max-width: none;
@@ -1043,4 +1043,30 @@ body.intro-is-open {
   .invitation-intro.is-leaving {
     opacity: 0;
   }
+}
+
+/* Modal de pago: aviso del WhatsApp y botón principal para mandar el comprobante. */
+.info-modal__text--small {
+  margin-top: 22px;
+  font-size: 0.98rem;
+}
+
+.info-modal__text--small strong {
+  font-weight: 500;
+  font-variant-numeric: lining-nums;
+  white-space: nowrap;
+}
+
+.info-modal__text--small + .info-modal__actions {
+  margin-top: 12px;
+}
+
+.info-modal__button--solid {
+  background: #111;
+  color: var(--manteca);
+}
+
+.info-modal__button--solid:hover,
+.info-modal__button--solid:focus-visible {
+  background: #2a2a2a;
 }
