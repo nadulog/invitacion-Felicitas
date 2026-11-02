@@ -39,7 +39,7 @@
       href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Montserrat:wght@400;500&display=swap"
     />
     <link rel="preload" as="image" href="assets/portada.webp" fetchpriority="high" />
-    <link rel="stylesheet" href="styles.css?v=20261102-1" />
+    <link rel="stylesheet" href="styles.css?v=20261102-2" />
   </head>
   <body class="intro-is-open">
     <div class="invitation-intro" role="dialog" aria-modal="true" aria-label="Bienvenida a los XV de Felicitas">
@@ -149,7 +149,7 @@
         <h2 id="map-title" class="sr-only">Cómo llegar</h2>
         <img
           src="assets/como-llegar.webp"
-          alt="Nos encontramos en Disanti espacio"
+          alt="Nos encontramos en Di Santo Multiespacio"
           width="941"
           height="1672"
           loading="lazy"
@@ -300,31 +300,36 @@
       </footer>
     </main>
 
-    <!-- TODO: dirección exacta de Disanti espacio y links de Maps/Waze. -->
     <dialog id="mapModal" class="info-modal" aria-labelledby="map-modal-title">
       <div class="info-modal__card">
         <button class="info-modal__close" type="button" data-close-modal aria-label="Cerrar">×</button>
         <span class="info-modal__star" aria-hidden="true"></span>
         <p class="info-modal__kicker">CÓMO LLEGAR</p>
-        <h3 id="map-modal-title" class="info-modal__title">Disanti espacio</h3>
+        <h3 id="map-modal-title" class="info-modal__title">Di Santo Multiespacio</h3>
         <p class="info-modal__text">Dirección a confirmar</p>
         <div class="info-modal__actions">
           <a
             class="info-modal__button"
-            href="https://www.google.com/maps/search/?api=1&amp;query=Disanti%20espacio"
+            href="https://www.google.com/maps/search/?api=1&amp;query=Di%20Santo%20Multiespacio"
             target="_blank"
             rel="noreferrer"
           >GOOGLE MAPS</a>
           <a
             class="info-modal__button"
-            href="https://www.waze.com/ul?q=Disanti%20espacio&amp;navigate=yes"
+            href="https://www.waze.com/ul?q=Di%20Santo%20Multiespacio&amp;navigate=yes"
             target="_blank"
             rel="noreferrer"
           >WAZE</a>
+          <a
+            class="info-modal__button"
+            href="https://www.facebook.com/Di-Santo-MultiEspacio-1205341569567933/"
+            target="_blank"
+            rel="noreferrer"
+          >VER EN FACEBOOK</a>
           <button
             class="info-modal__button"
             type="button"
-            data-copy="Disanti espacio"
+            data-copy="Di Santo Multiespacio"
             data-copy-message="Dirección copiada"
           >COPIAR DIRECCIÓN</button>
         </div>
@@ -378,7 +383,7 @@
     </button>
     <audio id="invitationAudio" src="assets/musica.mp3" loop preload="metadata"></audio>
 
-    <script src="script.js?v=20261102-1"></script>
+    <script src="script.js?v=20261102-2"></script>
     <script src="assets/invitation-personalization.js?v=20261102-1"></script>
   </body>
 </html>

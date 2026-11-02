@@ -99,7 +99,8 @@ async function copyText(button) {
 }
 
 document.querySelector("#openMapModal").addEventListener("click", () => openModal(mapModal));
-document.querySelector("#openGiftsModal").addEventListener("click", () => openModal(giftsModal));
+// La versión de amigos no tiene datos de regalo, por eso el botón puede no estar.
+document.querySelector("#openGiftsModal")?.addEventListener("click", () => openModal(giftsModal));
 
 document.querySelectorAll("[data-close-modal]").forEach((button) => {
   button.addEventListener("click", () => closeModal(button.closest("dialog")));
@@ -109,7 +110,7 @@ document.querySelectorAll("[data-copy]").forEach((button) => {
   button.addEventListener("click", () => copyText(button));
 });
 
-[mapModal, giftsModal].forEach((modal) => {
+[mapModal, giftsModal].filter(Boolean).forEach((modal) => {
   modal.addEventListener("close", syncModalState);
   modal.addEventListener("click", (event) => {
     if (event.target === modal) closeModal(modal);
