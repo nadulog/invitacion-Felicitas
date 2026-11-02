@@ -39,9 +39,25 @@
       href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Montserrat:wght@400;500&display=swap"
     />
     <link rel="preload" as="image" href="../assets/portada.webp" fetchpriority="high" />
-    <link rel="stylesheet" href="../styles.css?v=20261101-5" />
+    <link rel="stylesheet" href="../styles.css?v=20261102-1" />
   </head>
-  <body>
+  <body class="intro-is-open">
+    <div class="invitation-intro" role="dialog" aria-modal="true" aria-label="Bienvenida a los XV de Felicitas">
+      <div class="intro-curtain intro-curtain--left" aria-hidden="true"></div>
+      <div class="intro-curtain intro-curtain--right" aria-hidden="true"></div>
+      <div class="invitation-intro__content">
+        <span class="invitation-intro__star" aria-hidden="true"></span>
+        <p class="invitation-intro__kicker">MIS XV</p>
+        <p class="invitation-intro__name">Felicitas</p>
+        <span class="invitation-intro__line" aria-hidden="true"></span>
+        <p class="invitation-intro__question">¿Cómo querés entrar?</p>
+        <div class="invitation-intro__actions">
+          <button id="introWithMusic" class="intro-action" type="button"><span aria-hidden="true">♪</span> CON MÚSICA</button>
+          <button id="introWithoutMusic" class="intro-action intro-action--ghost" type="button">SIN MÚSICA</button>
+        </div>
+      </div>
+    </div>
+
     <main id="invitationMain" class="invitation" tabindex="-1" aria-label="Invitación a los XV años de Felicitas">
       <section class="panel panel--cover" aria-labelledby="cover-title">
         <h1 id="cover-title" class="sr-only">Mis XV, Felicitas</h1>
@@ -362,7 +378,7 @@
     </button>
     <audio id="invitationAudio" src="../assets/musica.mp3" loop preload="metadata"></audio>
 
-    <script src="../script.js?v=20261101-4"></script>
+    <script src="../script.js?v=20261102-1"></script>
     <script src="../assets/invitation-personalization.js?v=20261102-1"></script>
   </body>
 </html>

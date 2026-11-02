@@ -391,10 +391,12 @@ invitationAudio.addEventListener("play", () => syncAudioControl(true));
 invitationAudio.addEventListener("pause", () => syncAudioControl(false));
 
 /* Destellos dorados que titilan sobre cada pieza; la portada lleva más. */
-const sparklePanels = document.querySelectorAll(".panel:not(.panel--date):not(.panel--footer)");
+const sparklePanels = document.querySelectorAll(
+  ".invitation-intro, .panel:not(.panel--date):not(.panel--footer)"
+);
 
 sparklePanels.forEach((panel) => {
-  const isCover = panel.classList.contains("panel--cover");
+  const isCover = panel.matches(".panel--cover, .invitation-intro");
   const count = isCover ? 12 : 6;
 
   for (let i = 0; i < count; i += 1) {
@@ -409,3 +411,36 @@ sparklePanels.forEach((panel) => {
     panel.append(sparkle);
   }
 });
+
+/* Intro: entrar con o sin música. */
+function setupInvitationIntro() {
+  const intro = document.querySelector(".invitation-intro");
+  const main = document.querySelector("#invitationMain");
+  if (!intro) return;
+
+  let leaving = false;
+
+  const enter = (withMusic) => {
+    if (leaving) return;
+    leaving = true;
+    intro.querySelectorAll("button").forEach((button) => {
+      button.disabled = true;
+    });
+
+    // Se llama dentro del toque para que los celulares permitan reproducir.
+    if (withMusic) startInvitationAudio();
+
+    intro.classList.add("is-leaving");
+    window.setTimeout(() => {
+      document.body.classList.remove("intro-is-open");
+      intro.remove();
+      window.scrollTo(0, 0);
+      main?.focus({ preventScroll: true });
+    }, reducedMotion ? 260 : 1600);
+  };
+
+  intro.querySelector("#introWithMusic")?.addEventListener("click", () => enter(true));
+  intro.querySelector("#introWithoutMusic")?.addEventListener("click", () => enter(false));
+}
+
+setupInvitationIntro();
