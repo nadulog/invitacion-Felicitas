@@ -2,7 +2,7 @@
   var SUPABASE_URL = "https://fotugzhxlajyjdnjteld.supabase.co";
   var SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZvdHVnemh4bGFqeWpkbmp0ZWxkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUyNDY2MzAsImV4cCI6MjA4MDgyMjYzMH0.GnEzF-iJuiZJH5IVUgszWOq5qv4AeHfFf8Y3_YRW5FA";
   var RSVP_BASE = "https://bloomdate-rsvp.netlify.app";
-  // Las imágenes se buscan junto a este script, así funciona también desde /amigos/.
+  // Las imágenes se buscan junto a este script, sin depender de la página que lo carga.
   var ASSETS_BASE = document.currentScript.src;
 
   function formatNames(names) {
